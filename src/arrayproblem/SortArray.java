@@ -15,9 +15,9 @@ public class SortArray {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter an array length::");
+        System.out.println("Enter an array length::");
         int size = scanner.nextInt();
-        System.out.println("Please enter an array element::");
+        System.out.println("Enter an array element::");
         int [] arr = new int[size];
         for (int i = 0; i < size; i++) {
             arr[i] = scanner.nextInt();
