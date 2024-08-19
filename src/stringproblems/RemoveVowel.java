@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class RemoveVowel {
     static boolean isValidateInputString(String str) {
-        if (str == "" || str == null) {
-            return false;
-        }
-        return true;
+        return str.isEmpty() || str == null;
     }
 
     static String removeVowels(String inputStr) {
@@ -34,7 +31,7 @@ public class RemoveVowel {
         System.out.println("Enter a string:: ");
         String str = scanner.nextLine();
         boolean isValidInput = isValidateInputString(str);
-        if (!isValidInput) {
+        if (isValidInput) {
             return;
         } else {
             System.out.println("String without vowel is= " + removeVowels(str));
