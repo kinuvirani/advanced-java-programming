@@ -9,6 +9,7 @@ public class RemoveVowel {
 
     static String removeVowels(String inputStr) {
         StringBuilder stringWithoutVowel = new StringBuilder();
+        StringBuilder removedVowels = new StringBuilder();
         for (char ch : inputStr.toLowerCase().toCharArray()) {
             switch (ch) {
                 case 'a':
@@ -16,6 +17,7 @@ public class RemoveVowel {
                 case 'i':
                 case 'o':
                 case 'u':
+                    removedVowels.append(ch);
                     break;
                 default:
                     stringWithoutVowel.append(ch);
@@ -24,7 +26,8 @@ public class RemoveVowel {
             }
         }
 
-        return stringWithoutVowel.toString();
+        return "\nString without vowels= " + stringWithoutVowel.toString()
+                + "\nRemoved vowels= "+ removedVowels.toString();
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -34,7 +37,7 @@ public class RemoveVowel {
         if (isValidInput) {
             return;
         } else {
-            System.out.println("String without vowel is= " + removeVowels(str));
+            System.out.println("Original string is= " + str + removeVowels(str));
         }
     }
 }
