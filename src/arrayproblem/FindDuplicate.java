@@ -6,17 +6,22 @@ import java.util.Scanner;
 
 public class FindDuplicate {
     static int[] findDuplicates(int [] intArray) {
-        ArrayList<Integer> duplicateArray = new ArrayList<>();
+        int [] duplicateArray = new int[3];
+        int duplicateLength = 0;
         for (int i = 0; i < intArray.length; i++) {
             for (int j = i + 1; j < intArray.length; j++) {
                 if (intArray[i] == intArray[j]) {
-                    if (!duplicateArray.contains(intArray[i])) {
-                        duplicateArray.add(intArray[i]);
-                    }
+                    duplicateArray[i] = intArray[i];
+                    duplicateLength += 1;
                 }
             }
         }
-        return duplicateArray.stream().mapToInt(Integer::intValue).toArray();
+        int [] finalArray = new int[duplicateLength];
+        for (int i = 0; i < duplicateLength; i++) {
+            finalArray[i] = duplicateArray[i];
+        }
+
+        return finalArray;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
