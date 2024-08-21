@@ -4,21 +4,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShiftElement {
-    static int[] shiftArray(int [] intArray, int shiftPosition) {
-//        int [] shiftedArray = new int [intArray.length];
-        int lastIndex = intArray.length, swap;
+    static int[] shiftArray(int [] intArray, int shiftPosition) {;
+        int lastIndex = intArray.length, temp;
         for (int i = 0; i < shiftPosition; i++) {
-            for (int j = 0; j < lastIndex - 1; j++) {
-//                swap = intArray[j];
-//                intArray[j] = intArray[lastIndex - 1];
-//                intArray[lastIndex - 1] = swap;
-                swap = intArray[j+1];
-                intArray[j + 1] = swap;
-                intArray[j] = swap;
+            temp = intArray[lastIndex-1];
+            for (int j = lastIndex - 1; j > 0; j--) {
+                intArray[j] = intArray[j - 1];
             }
-        }
-        for (int i = 0; i < intArray.length; i++) {
-            System.out.println(i + "=" + intArray[i]);
+            intArray[0] = temp;
         }
         return intArray;
     }
