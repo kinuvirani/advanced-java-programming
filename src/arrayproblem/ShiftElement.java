@@ -12,6 +12,13 @@ public class ShiftElement {
                 intArray[j] = intArray[j - 1];
             }
             intArray[0] = temp;
+
+            // For left shifting
+//            temp = intArray[0];
+//            for (int j = 0; j < lastIndex - 1; j++) {
+//                intArray[j] = intArray[j + 1];
+//            }
+//            intArray[lastIndex - 1] = temp;
         }
         return intArray;
     }
